@@ -13,12 +13,12 @@ connectDB();
 
 const app = express();
 app.use(express.json());
-app.use(cors(
-    {
-        origin: FRONTEND_URL || 'http://localhost:3000', // Use the environment variable or default to localhost
+app.use(
+    cors({
+        origin: process.env.FRONTEND_URL || 'http://localhost:3000',
         credentials: true,
-    }
-));
+    })
+);
 // Routes
 app.use('/api/auth', authRoutes);
 
