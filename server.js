@@ -6,6 +6,7 @@ const authRoutes = require('./routes/authRoutes');
 const cors = require('cors');
 console.log("MONGO_URI on server:", process.env.MONGO_URI); // DEBUG
 
+//i am checking that everything is working
 
 
 
