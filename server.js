@@ -1,14 +1,14 @@
+require('dotenv').config();
 const express = require('express');
-const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 //cors this is used to allow the frontend to access the backend
 const cors = require('cors');
+console.log("MONGO_URI on server:", process.env.MONGO_URI); // DEBUG
 
 
 
 
-dotenv.config();
 connectDB();
 
 const app = express();
