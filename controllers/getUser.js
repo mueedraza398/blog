@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 
 const SingleUser = async (req, res) => {
-  try {
+  try { 
     const existingUser = await User.findById(req.user.id);
     if (!existingUser) {
       return res.status(404).json({ msg: 'User does not exist' });
