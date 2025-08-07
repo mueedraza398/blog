@@ -10,7 +10,8 @@ const SingleUser = async (req, res) => {
       return res.status(404).json({ msg: 'User does not exist' });
     }
 
-  
+
+    //testing  
 
     res.status(200).json({
       success: true,
