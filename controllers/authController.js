@@ -12,7 +12,10 @@ const register = async (req, res) => {
                 ? process.env.BASE_URL_PROD
                 : process.env.BASE_URL;
 
+
         const imageUrl = `${BASE_URL}/uploads/${req.file.filename}`;
+
+        console.log("imageUrl", imageUrl);
 
 
         if (!name || !email || !password || !role || !profileImage) {
