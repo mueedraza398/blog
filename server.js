@@ -4,7 +4,7 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
 //cors this is used to allow the frontend to access the backend
 const cors = require('cors');
-console.log("MONGO_URI on server:", process.env.MONGO_URI); // DEBUG
+const path = require('path');
 
 //i am checking that everything is working
 
@@ -14,6 +14,8 @@ connectDB();
 
 const app = express();
 app.use(express.json());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.use(
     cors({
         origin: process.env.FRONTEND_URL || 'http://localhost:3000',
