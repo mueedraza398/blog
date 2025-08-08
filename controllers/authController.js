@@ -7,10 +7,13 @@ const register = async (req, res) => {
         const { name, email, password, role } = req.body;
         const profileImage = req.file;
 
-    
+        const BASE_URL =
+            process.env.NODE_ENV === 'production'
+                ? process.env.BASE_URL_PROD
+                : process.env.BASE_URL;
 
 
-        const imageUrl = `${process.env.BASE_URL_PROD}/uploads/${req.file.filename}`;
+        const imageUrl = `${BASE_URL}/uploads/${req.file.filename}`;
 
         console.log("imageUrl", imageUrl);
 
